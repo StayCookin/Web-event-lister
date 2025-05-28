@@ -1,0 +1,114 @@
+@media screen {
+  form {
+    width: 30%;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1 px solid #d3d3d3;
+    background-color: white;
+    box-shadow: 5px 5px 3px #888;
+  }
+  .entry_cont input,
+  select {
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+  h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: lighter;
+  }
+
+  body {
+    .signup-form {
+      background: white;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0.1);
+      width: 100%;
+    }
+    .form-group {
+      margin-bottom: 1em;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.75em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+    .signup-btn {
+      width: 100%;
+      padding: 0.75em;
+      border: none;
+      background-color: gray;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .signup-btn:hover {
+      background-color: black;
+    }
+    background-color: #ccc;
+    h1 {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      padding-left: 35%;
+      font-style: normal;
+    }
+    h2 {
+      font-family: sans-serif;
+      padding-left: 42%;
+    }
+    margin: 0%;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  header {
+    background-color: #ccc;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  nav ul li a:hover {
+    background-color: black;
+    color: white;
+  }
+}

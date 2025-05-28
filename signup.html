@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <title>Ditiragalo.com</title>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <body>
+      <h1>Welcome to Ditiragalo</h1>
+
+      <h2>Create Account</h2>
+      <br /><br />
+      <form action="/register" method="post" class="sign-form">
+        <h1>Register account</h1>
+
+        <div class="form-group">
+          <label for="name">Full name: </label>
+          <input type="text" id="name" name="fullName" required />
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail">Email Address: </label>
+          <input type="email" id="userEmail" name="userEmail" required />
+        </div>
+
+        <h4>Please make sure your password</h4>
+        <h4>Has atleast one special character</h4>
+        <h4>Has atleast one number</h4>
+        <h4>Has atleast one capital letter</h4>
+        <h4>Your password has to have atleast 8 characters</h4>
+
+        <div class="form-group">
+          <label for="userPassword">Create Password: </label>
+          <input
+            type="password"
+            id="userPassword"
+            name="userPassword"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="userPassword">Re-enter Password: </label>
+          <input
+            type="password"
+            id="userPassword"
+            name="userPassword"
+            required
+          />
+        </div>
+
+        <div class="dropdown-section">
+          <label for="text-options>">Select your Role</label>
+          <select name="text-options" id="text-options">
+            <option value="">Please select your role</option>
+            <option value="organizer">Organizer</option>
+            <option value="participant">Participant</option>
+            <option value="attendee">Attendee</option>
+          </select>
+        </div>
+
+        <h5>By Signing up you agree to the terms and conditions</h5>
+        <input
+          type="checkbox"
+          id="select"
+          name="select"
+          ="value"
+          ="yes"
+        /><label for="select">Agree</label>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+        <li class="login-item-nav">
+          <a href="login.html" class="login-button-nav">Login</a>
+        </li>
+      </form>
+    </body>
+  </head>
+</html>
