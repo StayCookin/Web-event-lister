@@ -1,0 +1,927 @@
+:root {
+  --font-primary: "Poppins", sans-serif; /* For headings, important text */
+  --font-secondary: "Nunito Sans", sans-serif; /* For body text, descriptions */
+
+  --color-primary: #007bff; /* Engaging blue for CTAs */
+  --color-primary-dark: #0056b3;
+  --color-secondary: #28a745; /* A friendly green, can be used for success/confirmation */
+  --color-secondary-dark: #1e7e34;
+
+  --color-text: #333333; /* Main text color */
+  --color-text-light: #666666; /* Lighter text for secondary info */
+  --color-background: #f8f9fa; /* Light grey background for the page */
+  --color-surface: #ffffff; /* White for cards, forms, etc. */
+  --color-border: #dee2e6; /* Light border color */
+  --color-error: #dc3545; /* Red for errors */
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  --border-radius: 8px;
+}
+
+/* --- Global Resets & Base Styles --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.75em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 2.5rem;
+} /* e.g., Main page titles */
+h2 {
+  font-size: 2rem;
+} /* e.g., Section titles */
+h3 {
+  font-size: 1.5rem;
+} /* e.g., Card titles */
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* --- Container --- */
+.container {
+  width: 90%;
+  max-width: 1200px; /* Max width for content readability */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 1rem; /* Vertical and horizontal padding */
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* --- Shared Components: Header & Footer --- */
+.site-header {
+  background-color: var(--color-surface);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem; /* Reduced padding for header container */
+  padding-bottom: 0.5rem;
+}
+
+.logo {
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.main-nav a {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+}
+.main-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.main-nav .nav-button {
+  /* For Login/Signup buttons in nav */
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease-in-out;
+}
+.main-nav .nav-button:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.site-footer {
+  background-color: #343a40; /* Dark footer */
+  color: #adb5bd; /* Light text for footer */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+.site-footer p {
+  color: #adb5bd;
+  margin-bottom: 0;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease-in-out;
+  user-select: none; /* Prevent text selection on click */
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: white; /* Ensure text remains white */
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  border-color: var(--color-secondary);
+}
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background-color: transparent;
+}
+.btn-outline-primary:hover {
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+}
+
+/* --- Forms (for Login/Signup) --- */
+.form-container {
+  background-color: var(--color-surface);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  max-width: 450px; /* Max width for login/signup forms */
+  margin: 3rem auto; /* Center the form on the page */
+}
+@media (min-width: 576px) {
+  .form-container {
+    padding: 2.5rem;
+  }
+}
+
+.form-container h1 {
+  /* Title inside the form container */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  background-clip: padding-box;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control:focus {
+  border-color: var(--color-primary);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-text {
+  /* For links like "Forgot password?" or "Don't have an account?" */
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+.form-text a {
+  font-weight: 600;
+}
+
+/* --- Events Page Specific Styles --- */
+.page-hero {
+  /* Optional hero section for events page */
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--color-surface);
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+}
+.page-hero h1 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+}
+.page-hero p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.event-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr; /* Default to 1 column for mobile */
+}
+/* Responsive grid columns */
+@media (min-width: 768px) {
+  /* 2 columns for tablets */
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  /* 3 columns for desktops */
+  .event-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.event-card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures image covers well */
+  display: block; /* Removes bottom space under image */
+}
+
+.event-card-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allows content to expand */
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card-title {
+  font-size: 1.3rem; /* Slightly smaller than h3 for cards */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.event-card-info {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+.event-card-info svg {
+  /* For icons if you use them */
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  fill: currentColor; /* Icon color matches text */
+}
+
+.event-card-description {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Pushes button to bottom */
+  /* For multi-line truncation (optional) */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-card .btn {
+  /* Button inside the card */
+  width: 100%; /* Make button full width of card padding */
+  margin-top: auto; /* Pushes button to bottom if description is short */
+}
+:root {
+            --font-primary: 'Poppins', sans-serif; /* For headings, important text */
+            --font-secondary: 'Nunito Sans', sans-serif; /* For body text, descriptions */
+            
+            --color-primary: #007bff; /* Engaging blue for CTAs */
+            --color-primary-dark: #0056b3;
+            --color-secondary: #28a745; /* A friendly green, can be used for success/confirmation */
+            --color-secondary-dark: #1e7e34;
+            
+            --color-text: #333333; /* Main text color */
+            --color-text-light: #666666; /* Lighter text for secondary info */
+            --color-background: #f8f9fa; /* Light grey background for the page */
+            --color-surface: #ffffff; /* White for cards, forms, etc. */
+            --color-border: #dee2e6; /* Light border color */
+            --color-error: #dc3545; /* Red for errors */
+
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+
+            --border-radius: 8px;
+        }
+
+        /* --- Global Resets & Base Styles --- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.75em;
+            color: var(--color-text);
+        }
+
+        h1 { font-size: 2.5rem; } /* e.g., Main page titles */
+        h2 { font-size: 2rem; }   /* e.g., Section titles */
+        h3 { font-size: 1.5rem; } /* e.g., Card titles */
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: var(--color-primary-dark);
+            text-decoration: underline;
+        }
+
+        /* --- Container --- */
+        .container {
+            width: 90%;
+            max-width: 1200px; /* Max width for content readability */
+            margin-left: auto;
+            margin-right: auto;
+            padding: 2rem 1rem; /* Vertical and horizontal padding */
+        }
+        .event-details-container { /* Specific container for event details page for different max-width */
+             width: 90%;
+             max-width: 900px;
+             margin-left: auto;
+             margin-right: auto;
+             padding: 0 1rem 2rem 1rem; /* No top padding, banner handles it */
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+            .event-details-container {
+                padding: 0 1.5rem 3rem 1.5rem;
+            }
+        }
+
+
+        /* --- Shared Components: Header & Footer --- */
+        .site-header {
+            background-color: var(--color-surface);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .site-header .container-nav { /* Using a more specific class for header's inner container */
+            width: 90%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.5rem; 
+            padding-bottom: 0.5rem;
+        }
+
+
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .main-nav a {
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            color: var(--color-text);
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .main-nav a:hover {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+        .main-nav .nav-button { /* For Login/Signup buttons in nav */
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.2s ease-in-out;
+        }
+        .main-nav .nav-button:hover {
+            background-color: var(--color-primary-dark);
+            color: white;
+        }
+
+        .site-footer {
+            background-color: #343a40; /* Dark footer */
+            color: #adb5bd; /* Light text for footer */
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+        .site-footer p {
+            color: #adb5bd;
+            margin-bottom: 0;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            transition: all 0.2s ease-in-out;
+            user-select: none; /* Prevent text selection on click */
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            color: white; /* Ensure text remains white */
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-dark);
+            border-color: var(--color-secondary-dark);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-outline-primary {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            background-color: transparent;
+        }
+        .btn-outline-primary:hover {
+            background-color: var(--color-primary);
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* --- Forms (for Login/Signup) --- */
+        .form-container {
+            background-color: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            max-width: 450px; /* Max width for login/signup forms */
+            margin: 3rem auto; /* Center the form on the page */
+        }
+        @media (min-width: 576px) {
+            .form-container {
+                padding: 2.5rem;
+            }
+        }
+
+
+        .form-container h1 { /* Title inside the form container */
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-family: var(--font-secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-family: var(--font-secondary);
+            line-height: 1.5;
+            color: var(--color-text);
+            background-color: var(--color-surface);
+            background-clip: padding-box;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .form-control:focus {
+            border-color: var(--color-primary);
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+        
+        .form-text { /* For links like "Forgot password?" or "Don't have an account?" */
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .form-text a {
+            font-weight: 600;
+        }
+
+        /* --- Events Page Specific Styles --- */
+        .page-hero { /* Optional hero section for events page */
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--color-surface);
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+        .page-hero h1 {
+            font-size: 2.8rem;
+            color: var(--color-primary);
+        }
+        .page-hero p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .event-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr; /* Default to 1 column for mobile */
+        }
+        /* Responsive grid columns */
+        @media (min-width: 768px) { /* 2 columns for tablets */
+            .event-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 992px) { /* 3 columns for desktops */
+            .event-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .event-card {
+            background-color: var(--color-surface);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .event-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Ensures image covers well */
+            display: block; /* Removes bottom space under image */
+        }
+
+        .event-card-content {
+            padding: 1.5rem;
+            flex-grow: 1; /* Allows content to expand */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .event-card-title {
+            font-size: 1.3rem; /* Slightly smaller than h3 for cards */
+            font-weight: 600;
+            font-family: var(--font-primary); /* Ensure heading font */
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card-info {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+        }
+        .event-card-info svg, 
+        .event-card-info .icon-placeholder { /* For icons or emoji placeholders */
+            width: 16px;
+            height: 16px;
+            margin-right: 0.5rem;
+            /* fill: currentColor; For SVG */
+            color: var(--color-secondary); /* For emoji or text icons */
+        }
+
+        .event-card-description {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1; /* Pushes button to bottom */
+            /* For multi-line truncation (optional) */
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Show 3 lines */
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .event-card .btn { /* Button inside the card */
+            width: 100%; /* Make button full width of card padding */
+            margin-top: auto; /* Pushes button to bottom if description is short */
+        }
+
+        /* --- Event Details Page Specific Styles --- */
+        .event-banner {
+            width: 100%;
+            height: 300px; /* Adjust as needed */
+            overflow: hidden; /* Ensure image doesn't break layout */
+        }
+        .event-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the area, might crop */
+        }
+        @media (min-width: 768px) {
+            .event-banner {
+                height: 400px;
+            }
+        }
+
+        .event-content-wrapper {
+            background: var(--color-surface);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            margin-top: -60px; /* Overlap effect */
+            position: relative; /* For stacking context */
+            z-index: 10; /* Ensure it's above banner if needed, though margin-top usually suffices */
+        }
+        @media (min-width: 768px) {
+            .event-content-wrapper {
+                padding: 2.5rem;
+                margin-top: -80px;
+            }
+        }
+
+        .event-title-main { /* Specific class for the main title on details page */
+            font-family: var(--font-primary);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        @media (min-width: 768px) {
+            .event-title-main {
+                 font-size: 2.8rem;
+                 margin-bottom: 1.5rem;
+            }
+        }
+
+        .key-info-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on mobile */
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9; /* Slightly off-white background */
+            border-left: 4px solid var(--color-secondary);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0; /* Rounded corners on right */
+        }
+        @media (min-width: 768px) {
+            .key-info-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+                gap: 1.5rem;
+            }
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+        }
+        .info-item .icon-placeholder { /* For emoji icons */
+            font-size: 1.3rem; /* Make emoji slightly larger */
+            margin-right: 0.75rem;
+            color: var(--color-secondary);
+            line-height: 1; /* Ensure icon aligns well */
+        }
+        .info-item strong {
+            font-weight: 600;
+            color: var(--color-text);
+            margin-right: 0.3rem;
+        }
+        .info-item span:not(.icon-placeholder) { /* The actual info text */
+            color: var(--color-text-light);
+        }
+
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background-color: var(--color-border);
+            margin: 2rem 0;
+        }
+
+        .description-section h2 {
+            font-family: var(--font-primary);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+         @media (min-width: 768px) {
+            .description-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .description-section p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--color-text-light);
+        }
+        @media (min-width: 768px) {
+            .description-section p {
+                font-size: 1.05rem;
+            }
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .cta-button { /* Main call to action button */
+            background-color: var(--color-secondary);
+            color: white !important; /* Ensure white text */
+            text-decoration: none !important; /* Ensure no underline */
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px; /* Pill shape */
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .cta-button:hover {
+            background-color: var(--color-secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+         @media (min-width: 768px) {
+            .cta-button {
+                font-size: 1.3rem;
+                padding: 1rem 3rem;
+            }
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 2.5rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
