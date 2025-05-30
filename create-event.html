@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Event - Ditiragalo</title>
+    <link rel="stylesheet" href="ditiragalo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <!-- Header updated as requested -->
+    <header class="site-header">
+      <div class="container-nav">
+        <a href="event.html" class="logo">Ditiragalo</a>
+        <nav class="main-nav">
+          <a href="event.html">Events</a>
+          <a href="organizer-dashboard.html">My Dashboard</a>
+          <a href="profile.html">My Profile</a>
+          <a href="event.html" class="nav-button">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Add your create event form or content here -->
+      <div class="container">
+        <div class="form-container create-event-container">
+          <h1>Create New Event</h1>
+
+          <form
+            action="#"
+            method="POST"
+            id="createEventForm"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group">
+              <label for="eventName" class="form-label">Event Name</label>
+              <input
+                type="text"
+                id="eventName"
+                name="eventName"
+                class="form-control"
+                required
+                placeholder="e.g., Annual Music Fest"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="eventDate" class="form-label">Event Date</label>
+              <input
+                type="date"
+                id="eventDate"
+                name="eventDate"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="eventTime" class="form-label">Event Time</label>
+              <input
+                type="time"
+                id="eventTime"
+                name="eventTime"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="eventLocation" class="form-label"
+                >Event Location</label
+              >
+              <input
+                type="text"
+                id="eventLocation"
+                name="eventLocation"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="eventDescription" class="form-label"
+                >Event Description</label
+              >
+              <textarea
+                id="eventDescription"
+                name="eventDescription"
+                rows="5"
+                class="form-control"
+                required
+                placeholder="Tell us more about your event..."
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="eventPrice" class="form-label">Ticket Price</label>
+              <input
+                type="text"
+                id="eventPrice"
+                name="eventPrice"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="eventImage" class="form-label">Event Image</label>
+              <input
+                type="file"
+                id="eventImage"
+                name="eventImage"
+                class="form-control"
+                accept="image/png, image/jpeg, image/webp"
+              />
+              <small
+                class="form-text"
+                style="text-align: left; margin-top: 0.5rem; display: block"
+                >Upload a compelling image for your event</small
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="eventCategory" class="form-label"
+                >Event Category</label
+              >
+              <select
+                id="eventCategory"
+                name="eventCategory"
+                class="form-control"
+                required
+              >
+                <option value="">Select a category</option>
+                <option value="music">Music</option>
+                <option value="conference">Conference</option>
+                <option value="workshop">Workshop</option>
+                <option value="family">Family Event</option>
+                <option value="sports">Sports</option>
+                <option value="arts">Arts and Culture</option>
+                <option value="food">Food and Drinks</option>
+                <option value="charity">Charity</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width: 100%; margin-top: 1rem"
+            >
+              Create Event
+            </button>
+            <a
+              href="organizer-dashboard.html"
+              class="btn btn-outline-primary"
+              style="
+                width: 100%;
+                margin-top: 0.5rem;
+                display: block;
+                text-align: center;
+              "
+            >
+              Cancel
+            </a>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer copied from profile.html -->
+    <footer class="site-footer">
+      <p>&copy; 2025 Ditiragalo. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

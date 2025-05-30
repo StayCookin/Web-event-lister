@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizer Dashboard - Ditiragalo</title>
+    <link rel="stylesheet" href="ditiragalo.css" />
+    <link rel="preconnect" href="https://font.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container-nav">
+        <a href="event.html" class="logo">Ditiragalo</a>
+        <nav class="main-nav">
+          <a href="event.html">Public Events</a>
+          <a href="organizer-dashboard.html">My Dashboard</a
+          ><a href="create-event.html">Create Event</a>
+          <a href="profile.html">My Profile</a>
+          <a href="event.html" class="nav-button">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="dashboard-header">
+          <h1>Organizer Dashboard</h1>
+          <a href="create-event.html" class="btn btn-secondary btn-create-event"
+            >Create New Event</a
+          >
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="dashboard-section my-events-section">
+            <h2 class="dashboard-section-title">My Created Events</h2>
+            <ul class="event-list-organizer">
+              <li>
+                <div class="organizer-event-info">
+                  <h4>Gaborone Music Festival</h4>
+                  <p>Date: July 25, 2025 - Location: National Stadium</p>
+                  <p>
+                    Status:
+                    <span class="event-status-tag status-live">Live</span>
+                  </p>
+                  <p>Tickets Sold: 400/1000 | Revenue: P300, 000</p>
+                </div>
+                <div class="event-actions">
+                  <a
+                    href="event-details.html"
+                    class="btn btn-outline-primary btn-edit"
+                    >Edit</a
+                  >
+                  <a href="#" class="btn btn-delete">Delete</a>
+                  <a href="#">View Attendees</a>
+                </div>
+              </li>
+              <li>
+                <div class="organizer-event-info">
+                  <h4>Local Market (Past Event)</h4>
+                  <p>Date: January 15, 2025 - Location: Airport Junction</p>
+                  <p>
+                    Status:
+                    <span class="event-status-tag status-past">Past</span>
+                  </p>
+                  <p>Stalls Booked: 50/80</p>
+                </div>
+                <div class="event-actions">
+                  <a href="event-details.html">View Report</a>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <aside class="dashboard-sidebar">
+            <section class="dashboard-section quick-stats">
+              <h2 class="dashboard-section-title">Quick Stats</h2>
+              <div class="stat-item">
+                <span class="stat-number">1</span>
+                <span class="stat-label">Total Tickets Sold</span>
+              </div>
+            </section>
+
+            <section class="dashboard-section useful-links">
+              <h2 class="dashboard-section-title">Tools & Resources</h2>
+              <ul>
+                <li><a href="#">View All My Attendees</a></li>
+                <li><a href="#">Manage My Participant Applications</a></li>
+                <li><a href="#">Payout Settings</a></li>
+                <li><a href="#">Event Promotion Guide</a></li>
+                <li><a href="#">Organizer Help & FAQ</a></li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile- Ditiragalo</title>
+    <link rel="stylesheet" href="ditiragalo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container-nav">
+        <a href="event.html" class="logo">Ditiragalo</a>
+        <nav class="main-nav">
+          <a href="event.html">Events</a>
+          <a href="profile.html">My Profile</a>
+          <a href="event.html" class="nav-button">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="profile-container">
+          <div class="profile-header">
+            <h1>My Profile</h1>
+          </div>
+
+          <div class="profile-details-grid">
+            <div class="detail-item">
+              <span class="detail-label">Full Name</span>
+              <span class="detail-value">Palesa Molefe</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Email Address</span>
+              <span class="detail-value">p.molefe@hotmail.com</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Account Type</span>
+              <span class="detail-value">Attendee</span>
+            </div>
+
+            <div class="detail-item">
+              <span class="detail-label">Member Since</span>
+              <span class="detail-value">January 23, 2025</span>
+            </div>
+          </div>
+
+          <div class="my-events-section">
+            <h2>My Registered Events</h2>
+            <ul class="event-registration-list">
+              <li>
+                <div class="event-info">
+                  <h3>Gaborone Music Festival</h3>
+                  <p>Date: August 25, 2025</p>
+                </div>
+                <div class="event-status purchased">Ticket Purchased</div>
+              </li>
+              <li>
+                <div class="event-info">
+                  <h3>The 3 Dikgosi</h3>
+                  <p>Date: May 26, 2025</p>
+                </div>
+                <div class="event-status Pending">Application Pending</div>
+              </li>
+            </ul>
+            <div class="no-events">
+              <p>You haven't registered for any events yet.</p>
+              <a
+                href="event.html"
+                class="btn btn-primary"
+                style="margin-top: 1rem"
+                >Browse Events</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
