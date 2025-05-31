@@ -1,60 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="ditiragalo.css" />
-    <link rel="stylesheet" href="event-viewer.css" />
+    <link rel="stylesheet" href="css/ditiragalo.css" />
+    <link rel="stylesheet" href="css/event-viewer.css" />
   </head>
   <body>
     <header class="main-header">
       <a href="#" class="logo">Ditiragalo</a>
       <nav class="main-nav">
-        <a href="#">Home</a>
-        <a href="login.html" class="nav-button">Login</a>
-        <a href="signup.html" class="nav-button">Sign Up</a>
+        <a href="event.html" class="nav-button" id="navViewEventLink">Home</a>
+        <a href="login.html" class="nav-button" id="navLoginLink">Login</a>
+        <a href="signup.html" class="nav-button" id="navSignupLink">Sign Up</a>
       </nav>
     </header>
 
     <main>
       <div class="container">
         <h1 class="page-title">Upcoming Events</h1>
-
-        <div class="event-grid">
-          <article class="event-card">
-            <img src=images/3dikgosi.jpg text=Gaborone+Food+Fest" alt="Gaborone
-            Food Festival" />
-            <div class="card-content">
-              <h3 class="card-title">Gaborone Food Festival</h3>
-              <div class="card-details">
-                <span>🗓️</span><span> July 21, 2025</span>
-              </div>
-              <div class="card-details">
-                <span>📍</span> <span> National Stadium, Gaborone</span>
-              </div>
-              <p class="card-description">The number one Music Festival.</p>
-              <a href="event-details.html" class="card-button">View Details</a>
-              <a href="signup.html" class="signup-btn">Sign up to volunteer</a>
-            </div>
-          </article>
-
-          <article class="event-card">
-            <img src="images/mshati.jpg" alt="ThreeDikgosi" />
-            <div class="card-content">
-              <h3 class="card-title">Dikgosi tse Tharo</h3>
-              <div class="card-details">
-                <span>🗓️</span><span>August 23, 2025</span>
-              </div>
-              <div class="card-details">
-                <span>📍</span><span>Gaborone Magistrate, CBD</span>
-              </div>
-              <p class="card-description">
-                The Three Kings who liberated Botswana from Itself.
-              </p>
-              <a href="event-details.html" class="card-button">View Details</a>
-              <a href="signup.html" class="signup-btn"
-                >Sign up as a volunteer</a
-              >
-            </div>
-          </article>
+        <div id="eventGrid" class="event-grid">
+          <!-- Events will be dynamically rendered here by events.js -->
         </div>
       </div>
     </main>
@@ -62,5 +26,8 @@
     <footer class="main-footer">
       <p>&copy; 2025 Ditiragalo. All rights reserved.</p>
     </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/events.js" defer></script>
   </body>
 </html>

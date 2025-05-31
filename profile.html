@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile- Ditiragalo</title>
-    <link rel="stylesheet" href="ditiragalo.css" />
+    <link rel="stylesheet" href="css/ditiragalo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
@@ -13,9 +13,11 @@
       <div class="container-nav">
         <a href="event.html" class="logo">Ditiragalo</a>
         <nav class="main-nav">
-          <a href="event.html">Events</a>
-          <a href="profile.html">My Profile</a>
-          <a href="event.html" class="nav-button">Logout</a>
+          <a href="event.html" class="nav-button" id="navEventsLink">Events</a>
+          <a href="profile.html" id="navProfileLink">My Profile</a>
+          <a href="event.html" class="nav-button" id="navLogoutButton"
+            >Logout</a
+          >
         </nav>
       </div>
     </header>
@@ -30,15 +32,19 @@
           <div class="profile-details-grid">
             <div class="detail-item">
               <span class="detail-label">Full Name</span>
-              <span class="detail-value">Palesa Molefe</span>
+              <span class="detail-value" data-profile="name"
+                >Palesa Molefe</span
+              >
             </div>
             <div class="detail-item">
               <span class="detail-label">Email Address</span>
-              <span class="detail-value">p.molefe@hotmail.com</span>
+              <span class="detail-value" data-profile="email"
+                >p.molefe@hotmail.com</span
+              >
             </div>
             <div class="detail-item">
               <span class="detail-label">Account Type</span>
-              <span class="detail-value">Attendee</span>
+              <span class="detail-value" data-profile="role">Attendee</span>
             </div>
 
             <div class="detail-item">
@@ -78,5 +84,7 @@
         </div>
       </div>
     </main>
+    <script src="js/main.js" defer></script>
+    <script src="js/profile.js" defer></script>
   </body>
 </html>

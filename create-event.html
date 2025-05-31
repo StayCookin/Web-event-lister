@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Event - Ditiragalo</title>
-    <link rel="stylesheet" href="ditiragalo.css" />
+    <link rel="stylesheet" href="css/ditiragalo.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
@@ -12,12 +12,31 @@
     <!-- Header updated as requested -->
     <header class="site-header">
       <div class="container-nav">
-        <a href="event.html" class="logo">Ditiragalo</a>
+        <a href="event.html" class="logo" id="navEventsLink">Ditiragalo</a>
         <nav class="main-nav">
-          <a href="event.html">Events</a>
-          <a href="organizer-dashboard.html">My Dashboard</a>
-          <a href="profile.html">My Profile</a>
-          <a href="event.html" class="nav-button">Logout</a>
+          <a href="event.html" id="navEventsLink">Events</a>
+          <a href="profile.html" id="navProfileLink" style="display: none"
+            >My Profile</a
+          >
+          <a
+            href="organizer-dashboard.html"
+            id="navDashboardLink"
+            style="display: none"
+            >My Dashboard</a
+          >
+          <a
+            href="create-event.html"
+            id="navCreateEventLink"
+            style="display: none"
+            >Create Event</a
+          >
+          <a
+            href="#"
+            class="nav-button"
+            id="navLogoutButton"
+            style="display: none"
+            >Logout</a
+          >
         </nav>
       </div>
     </header>
@@ -168,10 +187,11 @@
         </div>
       </div>
     </main>
-
     <!-- Footer copied from profile.html -->
     <footer class="site-footer">
       <p>&copy; 2025 Ditiragalo. All rights reserved.</p>
     </footer>
+    <script src="js/main.js" defer></script>
+    <script src="js/createEvent.js" defer></script>
   </body>
 </html>

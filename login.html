@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8" />
 
     <title>Login</title>
@@ -9,18 +9,21 @@
   <body>
     <h1>Login to Ditiragalo</h1>
 
-    <form action="/login" method="post" class="sign-form">
+    <form id="loginForm">
       <div class="form-group">
-        <label for="email">Email Address: </label>
-        <input type="email" id="email" name="email" required />
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" name="email" required />
+        <span id="loginEmailError" class="form-error"></span>
       </div>
-
       <div class="form-group">
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password" required />
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" required />
+        <span id="loginPasswordError" class="form-error"></span>
       </div>
-
-      <button type="submit" class="signup-btn">Login</button>
+      <div id="loginFormError" class="form-error"></div>
+      <button type="submit" class="btn btn-primary">Login</button>
     </form>
+    <script src="js/main.js" defer></script>
+    <script src="js/auth.js" defer></script>
   </body>
 </html>
