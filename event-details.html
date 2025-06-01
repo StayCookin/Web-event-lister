@@ -6,7 +6,7 @@
     <title>Event Details</title>
 
     <link rel="stylesheet" href="css/ditiragalo.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/event-details.css" />
     <link rel="preconnect" href="https://font.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,12 +19,36 @@
     <header class="main-header">
       <a href="event.html" class="logo">Ditiragalo</a>
       <nav class="main-nav">
-        <ul>
-          <li><a href="event.html">Home</a></li>
-
-          <li><a href="login.html">Login</a></li>
-          <li><a href="signup.html">Sign Up</a></li>
-        </ul>
+        <a href="event.html" id="navEventsLink">Home</a>
+        <a href="login.html" id="navLoginLink" style="display: none">Login</a>
+        <a href="signup.html" id="navSignupLink" style="display: none"
+          >Sign Up</a
+        >
+        <a href="profile.html" id="navProfileLink" style="display: none"
+          >My Profile</a
+        >
+        <a
+          href="organizer-dashboard.html"
+          id="navDashboardLink"
+          style="display: none"
+          >My Dashboard</a
+        >
+        <a
+          href="create-event.html"
+          id="navCreateEventLink"
+          style="display: none"
+          >Create Event</a
+        >
+        <a href="view-event.html" id="navViewEventLink" style="display: none"
+          >View Event</a
+        >
+        <a
+          href="event.html"
+          id="navLogoutButton"
+          class="nav-button"
+          style="display: none"
+          >Logout</a
+        >
       </nav>
     </header>
 
@@ -71,7 +95,7 @@
     </main>
 
     <!-- Footer copied from event.html -->
-    <footer>
+    <footer class="main-footer">
       <p>&copy; 2025 Ditiragalo. All rights reserved.</p>
     </footer>
     <script src="js/main.js" defer></script>
